@@ -373,4 +373,28 @@ p:last-child {
     .footer-right {
         text-align: center;
     }
+
+/* Mobile: stack neatly */
+@media (max-width: 768px) {
+    .main-nav {
+        float: none;
+        width: 100%;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .main-nav li {
+        width: 100%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .main-nav a {
+        display: block;      /* whole row is tappable */
+        padding: 0.9rem 1rem;
+        text-align: center;  /* or left, to taste */
+    }
+}
 }
