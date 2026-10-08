@@ -122,9 +122,7 @@ p:last-child {
 
 .main-nav a:hover,
 .main-nav a:focus,
-.main-nav a.active {
-    border-bottom-color: var(--light-blue);
-}
+
 
 
 /* ---------------------------------------------------------
