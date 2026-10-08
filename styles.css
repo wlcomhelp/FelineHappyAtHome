@@ -1,0 +1,376 @@
+/* =========================================================
+   STYLES.CSS
+   Soft & friendly theme
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   1. COLOUR PALETTE & SETTINGS
+   Change a colour here and it updates across the whole site.
+   --------------------------------------------------------- */
+:root {
+    --cream: #fdf6ee;       /* content containers      */
+    --light-blue: #77a6bd;  /* main body background    */
+    --dark-blue: #1e3d52;   /* ALL headings + paragraph text
+                               NOTE: you supplied #fdfdfd, which is almost
+                               white and would be invisible on the cream and
+                               white backgrounds. Swap in your exact dark
+                               blue hex here. */
+    --white: #ffffff;
+ 
+    --container-width: 900px;   /* max width of each content container */
+    --radius: 20px;             /* curved corners on containers        */
+ 
+    --font-heading: "Marcellus", Georgia, serif;   /* elegant flared serif */
+    --font-body: "Questrial", Arial, sans-serif;    /* clean, rounded sans  */
+}
+
+
+/* ---------------------------------------------------------
+   2. BASE / RESET
+   --------------------------------------------------------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: var(--dark-blue);
+    background-color: var(--cream);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* ---------------------------------------------------------
+   3. TYPOGRAPHY (headings & paragraphs use dark blue)
+   --------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 500;
+    color: var(--dark-blue);
+    line-height: 1.2;
+    margin-bottom: 0.6em;
+}
+
+h1 { font-size: 3.4rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.4rem; }
+h4 { font-size: 1.2rem; }
+
+p {
+    color: var(--dark-blue);
+    margin-bottom: 1em;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ---------------------------------------------------------
+   4. HEADER BAR
+   White, full width. Logo floats left, nav floats right.
+   --------------------------------------------------------- */
+.site-header {
+    width: 100%;
+    background-color: var(--white);
+    padding: 15px 30px;
+    display: flow-root;          /* clears the floats inside */
+}
+
+/* Logo - floats left */
+.logo {
+    float: left;
+}
+
+.logo img {
+    height: 200px;
+    width: auto;
+}
+
+/* Navigation - floats right */
+.main-nav {
+    float: right;
+    line-height: 60px;           /* vertically lines up with the logo */
+}
+
+.main-nav ul {
+    list-style: none;
+}
+
+.main-nav li {
+    display: inline-block;
+    margin-left: 25px;
+}
+
+.main-nav a {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: var(--dark-blue);
+    text-decoration: none;
+    padding: 6px 4px;
+    border-bottom: 3px solid transparent;
+}
+
+.main-nav a:hover,
+.main-nav a:focus,
+.main-nav a.active {
+    border-bottom-color: var(--light-blue);
+}
+
+
+/* ---------------------------------------------------------
+   5. MAIN BODY
+   Light blue background, full width. Holds the containers.
+   --------------------------------------------------------- */
+.main-body {
+    width: 100%;
+    background-color: var(--light-blue);
+    padding: 50px 20px;
+}
+
+
+/* ---------------------------------------------------------
+   6. CONTENT CONTAINERS
+   Max 900px, centred, curved corners, cream background.
+   --------------------------------------------------------- */
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto 40px auto;    /* centred with space below */
+    padding: 35px;
+    background-color: var(--cream);
+    border-radius: var(--radius);
+}
+
+.container:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ---------------------------------------------------------
+   7. ALTERNATE CONTAINER COLOURS (IDs)
+   Add id="container-white" or id="container-blue" to a
+   container to change its colour.
+   --------------------------------------------------------- */
+
+/* White container */
+#container-white {
+    background-color: var(--white);
+}
+
+/* Light blue container with a cream outline
+   (so it still stands out on the light blue page) */
+#container-blue {
+    background-color: var(--light-blue);
+    border: 3px solid var(--cream);
+}
+
+/* ---------------------------------------------------------
+   BOOK NOW BUTTON
+   Cream background, dark blue text and border
+   --------------------------------------------------------- */
+.btn-book {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 32px;
+    background-color: var(--cream);
+    color: var(--dark-blue);
+    border: 2px solid var(--dark-blue);
+    border-radius: 50px;              /* soft pill shape */
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* ---------------------------------------------------------
+   CIRCLE IMAGE
+   Crops any image into a centred circle
+   --------------------------------------------------------- */
+.circle-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;           /* crops to fill without stretching */
+    border-radius: 50%;          /* makes it a circle */
+    border: 4px solid var(--light-blue);
+    margin: 0 auto 20px auto;    /* centres it with space above the h1 */
+}
+
+/* Hover: colours swap */
+.btn-book:hover,
+.btn-book:focus {
+    background-color: var(--dark-blue);
+    color: var(--cream);
+}
+
+
+/* ---------------------------------------------------------
+   8. SPECIAL SPLIT CONTAINER (index page)
+   Sits directly under the header with no gap, spans the
+   full width of the screen, cream background.
+   Text on the left half, image on the right half.
+   --------------------------------------------------------- */
+.split-container {
+    width: 100%;
+    display: flex;
+    background-color: var(--cream);
+    margin: 0;                   /* no space under the header */
+}
+
+/* Left half - heading text */
+.split-text {
+    flex: 0 0 50%;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.split-text h1 {
+    font-size:80px;
+    margin-bottom: 0;
+}
+
+/* Right half - image fills the space */
+.split-image {
+    flex: 0 0 50%;
+    min-height: 400px;
+}
+
+.split-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;           /* fills without stretching */
+}
+
+
+/* ---------------------------------------------------------
+   9. FOOTER
+   Full width, 3 columns: logo | centred text | right text
+   White to match the header (light blue would blend into
+   the main body).
+   --------------------------------------------------------- */
+.site-footer {
+    width: 100%;
+    background-color: var(--white);
+    padding: 40px 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    gap: 20px;
+}
+
+.site-footer p {
+    color: var(--dark-blue);
+    margin-bottom: 0.3em;
+}
+
+/* Left column - logo */
+.footer-left img {
+    height: 150px;
+    width: auto;
+}
+
+/* Middle column - centred text */
+.footer-middle {
+    text-align: center;
+}
+
+/* Right column - right-aligned text */
+.footer-right {
+    text-align: right;
+}
+
+
+/* ---------------------------------------------------------
+   10. MOBILE STYLES (screens 768px and below)
+   --------------------------------------------------------- */
+@media (max-width: 768px) {
+
+    /* Header: logo and nav stack and centre */
+    .site-header {
+        padding: 15px 20px;
+        text-align: center;
+    }
+
+    .logo,
+    .main-nav {
+        float: none;
+    }
+
+    .logo img {
+        margin: 0 auto;
+    }
+
+    /* Special container heading shrinks on mobile */
+    .split-text h1 {
+        font-size: 40px;
+    }
+
+    .main-nav {
+        line-height: normal;
+        margin-top: 12px;
+    }
+
+    .main-nav li {
+        margin: 5px 10px;
+    }
+
+    /* Main body: containers go full width */
+    .main-body {
+        padding: 25px 12px;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 25px;
+        margin-bottom: 25px;
+    }
+
+    /* Split container: text on top, image below */
+    .split-container {
+        flex-direction: column;
+    }
+
+    .split-text {
+        padding: 30px 20px;
+    }
+
+    .split-text,
+    .split-image {
+        flex: 1 1 auto;
+        width: 100%;
+    }
+
+    .split-image {
+        min-height: 250px;
+    }
+
+    /* Typography scales down a little */
+    h1 { font-size: 1.9rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.25rem; }
+
+    /* Footer: columns stack and centre */
+    .site-footer {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    .footer-left img {
+        margin: 0 auto;
+    }
+
+    .footer-middle,
+    .footer-right {
+        text-align: center;
+    }
+}

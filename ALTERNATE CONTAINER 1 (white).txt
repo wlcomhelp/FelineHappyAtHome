@@ -1,0 +1,6 @@
+        <!-- ALTERNATE CONTAINER 1 (white) - uses id="container-white" -->
+        <div class="container" id="container-white">
+            <h2>Our Services</h2>
+            <p>This container uses the white background. Give a short overview of your services here.</p>
+        </div>
+        <!-- END ALTERNATE CONTAINER 1 -->
